@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row">
+    <div class="col-4">
+        <h1>List of Books</h1>
+    </div>
+    <div class="col-4 mt-2">
+        <a asp-controller="Books" asp-action="create" class="btn btn-outline-primary">Add Book</a>
+    </div>
+</div>
+
+<div class="col-5">
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item">
+                <a asp-action="GetBookById" asp-controller="Books" asp-route-id="@item.Id">@item.BookName</a>
+                
+            </li>
+        }
+    </ul>
+</div>
+
