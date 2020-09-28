@@ -74,5 +74,10 @@ namespace MyLibraryStore.Controllers
 
             return RedirectToAction("Index", "Books");
         }
+
+        public void GetName()
+        {
+
+        }
     }
 }
